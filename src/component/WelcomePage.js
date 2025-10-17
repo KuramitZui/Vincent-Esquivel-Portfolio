@@ -3,7 +3,6 @@ import { FaComments, FaCopy, FaFacebook, FaEnvelope, FaGithub, FaCopyright } fro
 import myImage from "../media/vincent.png"; 
 import myImage2 from "../media/vincent3.png"; 
 import paginas from "../media/paginasprimne.png";
-import sweetquest from "../media/sweet-quest.png";
 import collegethesis from "../media/collegethesis.png";
 import bg from "../media/background.png";
 import { FaBars, FaTimes } from "react-icons/fa";
