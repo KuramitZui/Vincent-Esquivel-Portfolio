@@ -19,7 +19,7 @@ const Welcome = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [copied, setCopied] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const sections = ["home", "portfolio", "skills", "about"];
+  const sections = ["home", "portfolio", "skills", "hobbies","about" ]; // Added Hobbies
 
   const handleCopy = (text, type) => {
     navigator.clipboard.writeText(text);
@@ -158,15 +158,15 @@ const Welcome = () => {
         {/* Gmail */}
         <div className="flex justify-between items-center bg-white/10 backdrop-blur-sm p-3 rounded-lg border border-white/20">
           <a
-            href="mailto:Vincentesquivel47@gmail.com"
+            href="mailto:vincent.esquivel@esquivince.online"
             className="flex items-center gap-2 text-white hover:text-yellow-400 text-base md:text-lg"
           >
             <FaEnvelope size={25} color="#ea4335" />
-            <span className="hidden sm:inline">Vincentesquivel47@gmail.com</span>
+            <span className="hidden sm:inline">vincent.esquivel@esquivince.online</span>
             <span className="sm:hidden">Gmail</span>
           </a>
           <button
-            onClick={() => handleCopy("Vincentesquivel47@gmail.com", "Gmail")}
+            onClick={() => handleCopy("vincent.esquivel@esquivince.online", "Gmail")}
             className="text-yellow-400"
           >
             <FaCopy />
@@ -209,7 +209,7 @@ const Welcome = () => {
       </section>
 
       {/* Portfolio Section */}
-       <section id="portfolio" className="min-h-screen py-16 px-4 md:px-16 text-white text-center">
+      <section id="portfolio" className="min-h-screen py-16 px-4 md:px-16 text-white text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Portfolio</h2>
         <p className="text-white text-lg mb-12">Here are some of the projects I have worked on.</p>
 
@@ -221,13 +221,7 @@ const Welcome = () => {
         img: paginas,
       },
       {
-        title: "Sweet Quest",
-        desc:
-          "Sweet Quest is an early-stage draft of an online ordering system for a variety of desserts, including graham treats, milkshakes, and other baked goods. The initial concept included key features like a menu display, order customization, and a simple checkout process. Unfortunately, the project is currently paused and has not progressed past the initial design and wireframing due to financial concerns that emerged early in the development cycle, preventing the necessary resources for completion.",
-    img: sweetquest,
-      },
-      {
-        title: "Clubs and Organizations Events and Announcements Website",
+        title: "Clubs and Organizations Website",
         desc:
           "Developed as our Capstone Project, this website serves as a central hub for all information related to a university's Clubs and Organizations, specifically designed for university students(NEUST). It provides detailed profiles for each  , a dedicated section for posting their upcoming events and announcements, and a comprehensive calendar view. The platform is designed to be highly user-friendly and easy to navigate, allowing students to efficiently discover new groups and stay informed. The back-end features a secure administrator dashboard for   officers to upload and manage their content.",
         img: collegethesis,
@@ -248,15 +242,15 @@ const Welcome = () => {
   <div className="flex flex-col md:flex-row w-full max-w-7xl gap-8">
     {/* Soft Skills */}
     <div className="md:w-1/3 border-r-2 border-yellow-400 pr-4">
-      <h2 className="text-3xl font-bold mb-2" style={{ fontFamily: ['Funnel', 'sans-serif'] }}>Soft Skills</h2>
+      <h2 className="text-3xl font-bold mb-2">Soft Skills</h2>
       <ul className="list-none space-y-1.5 text-lg">
-        <li >● Problem-solving and analytical thinking</li>
-        <li >● Good communication skills</li>
-        <li >● Adaptable, flexible and fast learner</li>
-        <li >● Computer Literate</li>
-        <li >● Maintain focus and productivity under pressure</li>
-        <li >● Time management and organizational skills</li>
-        <li >● Strong decision-making skills</li>
+        <li>● Problem-solving and analytical thinking</li>
+        <li>● Good communication skills</li>
+        <li>● Adaptable, flexible and fast learner</li>
+        <li>● Computer Literate</li>
+        <li>● Maintain focus and productivity under pressure</li>
+        <li>● Time management and organizational skills</li>
+        <li>● Strong decision-making skills</li>
       </ul>
     </div>
 
@@ -273,6 +267,91 @@ const Welcome = () => {
   </div>
 </section>
 
+{/*Hobbies Section with 2 Columns */}
+<section id="hobbies" className="min-h-screen py-16 px-4 md:px-16 text-white">
+  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-yellow-400">Hobbies</h2>
+  <p className="text-lg mb-12 text-center text-gray-200 italic">Develop with my free time</p>
+
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+    {/* Left: Personal Hobbies */}
+    <div>
+      <h3 className="text-2xl font-semibold mb-6 text-yellow-400 text-center md:text-left">What I Love Doing</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {[
+          {
+            title: "Building Side Projects",
+            desc: "I love experimenting with new web technologies and frameworks by developing small personal apps and tools.",
+          },
+          {
+            title: "Graphic & UI Design",
+            desc: "Designing interfaces helps me combine creativity with usability.",
+          },
+          {
+            title: "Learning New Tech",
+            desc: "Exploring frameworks and AI integrations keeps me updated.",
+          },
+          {
+            title: "Gaming & Strategy",
+            desc: "Games help me relax while sharpening problem-solving.",
+          },
+          {
+            title: "Watching Tech Talks",
+            desc: "I stay updated through programming tutorials and podcasts.",
+          },
+          {
+            title: "Music & Inspiration",
+            desc: "Lo-fi or instrumental music fuels my creativity during coding.",
+          },
+        ].map((hobby, i) => (
+          <div
+            key={i}
+            className="bg-gray-900 rounded-xl p-5 shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300"
+          >
+            <h4 className="text-yellow-400 text-lg font-semibold mb-2">{hobby.title}</h4>
+            <p className="text-sm text-gray-300">{hobby.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Right: Projects / Repositories */}
+    <div>
+      <h3 className="text-2xl font-semibold mb-6 text-yellow-400 text-center md:text-left">Creative Coding & Experiments</h3>
+      <div className="flex flex-col gap-6">
+        {[
+          {
+            name: "Chat Drift - Find Your Partner",
+            link: "https://chatdrift.esquivince.online/",
+            desc: "A real-time chat web app where users can find and talk to new people instantly.",
+          },
+          {
+            name: "PH Address Location (NPM Module)",
+            link: "https://github.com/KuramitZui/ph-addresses-location",
+            desc: "An open-source NPM package that provides a complete list of Philippine regions, provinces, cities, and barangays.",
+          },
+  
+        ].map((project, i) => (
+          <div
+            key={i}
+            className="bg-gray-900 rounded-xl p-5 shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300 text-left"
+          >
+            <h4 className="text-yellow-400 text-lg font-semibold mb-2">{project.name}</h4>
+            <p className="text-sm text-gray-300 mb-3">{project.desc}</p>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-yellow-400 underline hover:text-yellow-300 break-words"
+            >
+              {project.link}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 {/* About Section */}
 <section id="about" className="min-h-screen flex justify-center px-4 md:px-16 py-16 text-white">
   <div className="flex flex-col md:flex-row w-full max-w-7xl items-center gap-8">
@@ -281,6 +360,7 @@ const Welcome = () => {
       <p className="text-base md:text-lg">
         I am a recent graduate with a Bachelor of Science in Information Technology from the Nueva Ecija University of Science and Technology, specializing in Database System Technology. I bring strong front-end expertise and established foundational back-end knowledge, allowing me to effectively manage everything from user interface development to data-driven application logic and database architecture. I am prepared to apply my skills to drive development and streamline production cycles, and I am driven to aggressively learn new technologies and methodologies through practical, hands-on experience in a professional setting.
       </p>
+
       <div className="flex gap-2 flex-wrap mt-2">
         <span className="bg-yellow-400 text-black px-3 py-1 rounded-lg font-medium">Front-End</span>
         <span className="bg-yellow-400 text-black px-3 py-1 rounded-lg font-medium">Back-End</span>
@@ -299,39 +379,39 @@ const Welcome = () => {
 
 
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 px-4 md:px-16 text-center text-white">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Me</h2>
-        <hr className="border-gray-400 mb-4" />
-        <div className="text-lg space-y-2 mb-4">
-          <p>Email: <a href="mailto:Vincentesquivel47@gmail.com" className="text-yellow-400">Vincentesquivel47@gmail.com</a></p>
-          <p>Phone: <a href="tel:+639098052172" className="text-yellow-400">+639098052172</a></p>
-        </div>
-        <div className="flex justify-center items-center gap-2 text-white text-sm">
-          <FaCopyright /> 2025 Developed by Vincent S. Esquivel.
-        </div>
-      </section>
 
-      {/* Scroll Top */}
-      {showScrollTop && (
-        <button onClick={scrollToTop} className="fixed bottom-5 right-5 w-12 h-12 rounded-full bg-yellow-400 text-black text-2xl flex items-center justify-center shadow-lg hover:bg-yellow-300 transition">↑</button>
-      )}
+{/* Contact Section */}
+<section id="contact" className="py-16 px-4 md:px-16 text-center text-white">
+  <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Me</h2>
+  <hr className="border-gray-400 mb-4" />
+  <div className="text-lg space-y-2 mb-4">
+    <p>Email: <a href="mailto:vincent.esquivel@esquivince.online" className="text-yellow-400">vincent.esquivel@esquivince.online</a></p>
+  </div>
+  <div className="flex justify-center items-center gap-2 text-white text-sm">
+    <FaCopyright /> 2025 Developed by Vincent S. Esquivel.
+  </div>
+</section>
 
-      {/* Copied Notification */}
-      {copied && (
-        <div className="fixed bottom-20 right-5 bg-gray-900 text-yellow-400 px-4 py-2 rounded shadow-lg animate-slideUpFade">
-          ✅ {copied} copied!
-        </div>
-      )}
+{/* Scroll Top */}
+{showScrollTop && (
+  <button onClick={scrollToTop} className="fixed bottom-5 right-5 w-12 h-12 rounded-full bg-yellow-400 text-black text-2xl flex items-center justify-center shadow-lg hover:bg-yellow-300 transition">↑</button>
+)}
 
-      <style>{`
-        @keyframes slideUpFade {
-          0% { opacity:0; transform: translateY(20px); }
-          20% { opacity:1; transform: translateY(0); }
-          80% { opacity:1; transform: translateY(0); }
-          100% { opacity:0; transform: translateY(-20px); }
-        }
-      `}</style>
+{/* Copied Notification */}
+{copied && (
+  <div className="fixed bottom-20 right-5 bg-gray-900 text-yellow-400 px-4 py-2 rounded shadow-lg animate-slideUpFade">
+    ✅ {copied} copied!
+  </div>
+)}
+
+<style>{`
+  @keyframes slideUpFade {
+    0% { opacity:0; transform: translateY(20px); }
+    20% { opacity:1; transform: translateY(0); }
+    80% { opacity:1; transform: translateY(0); }
+    100% { opacity:0; transform: translateY(-20px); }
+  }
+`}</style>
     </div>
   );
 };
