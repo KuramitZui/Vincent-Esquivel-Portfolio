@@ -516,7 +516,7 @@ const Welcome = () => {
               color: "#1877f2",
             }}
           >
-            // portfolio
+           {/* Portfolio*/}
           </span>
           <h2
             style={{
@@ -609,7 +609,7 @@ const Welcome = () => {
               color: "#1877f2",
             }}
           >
-            // capabilities
+            {/* Capabilities */}
           </span>
           <h2
             style={{
@@ -742,7 +742,7 @@ const Welcome = () => {
               color: "#1877f2",
             }}
           >
-            // open source & experiments
+            {/* Open Sources and Experiement */}
           </span>
           <h2
             style={{
@@ -850,7 +850,7 @@ const Welcome = () => {
                 color: "#1877f2",
               }}
             >
-              // team
+              {/* Team */}
             </span>
             <h2
               style={{
@@ -921,7 +921,7 @@ const Welcome = () => {
               color: "#1877f2",
             }}
           >
-            // contact
+            {/* Contact */}
           </span>
           <h2
             style={{
